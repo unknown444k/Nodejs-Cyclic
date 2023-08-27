@@ -1,9 +1,10 @@
 require("dotenv").config()
 const express = require("express")
+const bodyParser = require("body-parser")
 const app = express()
 const database = require("../Nodejs-Cyclic/model/books")
-app.use(express.json())
-
+app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 const PORT = process.env.PORT || 3000;
 
 
